@@ -1,0 +1,28 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "music_store_db",
+            "dialect": "MySQL",
+            "name": "musicSql",
+            "password": "musicSql",
+            "port": 3307,
+            "server": "localhost",
+            "username": "root",
+            "driver": "MySQL"
+        },
+        {
+            "askForPassword": false,
+            "database": "trellodb",
+            "driver": "MySQL",
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "name": "trello-analot",
+            "password": "trellodb-password",
+            "port": 3306,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "trellodb-server"
+        }
+    ]
+}
