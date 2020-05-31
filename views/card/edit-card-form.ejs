@@ -1,0 +1,45 @@
+<div class='container'>
+    <form class="card" action="/card/edit?card=<%= card.id %>" method="POST" enctype="multipart/form-data">
+        <div class="card-header d-flex justify-content-between align-items-baseline">
+            <h5 class="card-title">card <strong>"<%= card.title %>"</strong> of board <strong>"<%= card.board.title %>"</strong></h5>
+            <a class="btn btn-light" href="/">
+                <svg class="bi bi-x" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+                    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+                </svg>
+            </a> 
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="cardTitle">Title</label>
+                <input type="text" name="title" class="form-control" id="cardTitle" value="<%= card.title %>">
+            </div>
+            <div class="form-group">
+                <label for="cardDescription">Description</label>
+                <textarea class="form-control" name="description" id="cardDescription" rows="3"><%= card.description %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="cardAttachments">Attachments</label>
+                <input type="file" name="attachments" class="form-control-file" id="cardAttachments" multiple>
+            </div>
+            <% if (card.attachments.length) { %>
+                <div class="list-group">
+                    <% card.attachments.forEach(attach => { %>
+                        <div class="list-group-itemd-flex justify-content-between align-items-baseline">
+                            <a href="/<%= attach.path %>" target="_blank"><%= attach.originalname %></a>
+                            <a class="btn btn-white ml-2" href="/card/attach/delete?card=<%= card.id %>&attach=<%= attach.id %>" >
+                                <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    <% }) %> 
+                </div>
+            <% } %> 
+        </div>
+        <div class="card-actions">
+            <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Save</button>
+        </div>
+    </form>
+</div>

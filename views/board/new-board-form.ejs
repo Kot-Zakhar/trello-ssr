@@ -1,0 +1,30 @@
+<div class="container">
+    <form class="card" action="/board/new" method="POST" enctype="multipart/form-data">
+        <div class="card-header d-flex justify-content-between align-items-baseline">
+            <h5 class="card-title">New board</h5>
+            <a class="btn btn-light" href="/">
+                <svg class="bi bi-x" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+                    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+                </svg>
+            </a> 
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="boardTitle">Title</label>
+                <input type="text" name="title" class="form-control" id="boardTitle">
+            </div>
+            <div class="form-group">
+                <label for="boardDescription">Description</label>
+                <textarea class="form-control" name="description" id="boardDescription" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="boardBackgroundImage">Background image</label>
+                <input type="file" name="backgroundImage" class="form-control-file" id="boardBackgroundImage">
+            </div>
+        </div>
+        <div class="card-actions">
+            <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Create</button>
+        </div>
+    </form>
+</div>

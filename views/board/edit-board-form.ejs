@@ -1,0 +1,35 @@
+<div class="container">
+    <form class="card" action="/board/edit?board=<%= board.id %>" method="POST" enctype="multipart/form-data">
+        <div class="card-header d-flex justify-content-between align-items-baseline">
+            <h5 class="card-title">board <strong>"<%= board.title %>"</strong></h5>
+            <a class="btn btn-light" href="/">
+                <svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+                    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+                </svg>
+            </a> 
+        </div>
+        <% if (board.backgroundImage) { %>
+            <img src="/<%= board.backgroundImage.path %>" class="card-img-top" alt="<%= board.backgroundImage.originalname %>">
+        <% } %> 
+        <div class="card-body">
+            <div class="form-group">
+                <label for="boardTitle">Title</label>
+                <input type="text" name="title" class="form-control" id="boardTitle" value="<%= board.title %>">
+            </div>
+            <div class="form-group">
+                <label for="boardDescription">Description</label>
+                <textarea class="form-control" name="description" id="boardDescription" rows="3"><%= board.description %> </textarea>
+            </div>
+            <div class="form-group">
+                <label for="boardBackgroundImage">
+                    <%= board.backgroundImage ? "Replace background image" : "Set background image" %> 
+                </label>
+                <input type="file" name="backgroundImage" class="form-control-file" id="boardBackgroundImage">
+            </div>
+        </div>
+        <div class="card-actions">
+            <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Save</button>
+        </div>
+    </form>
+</div>

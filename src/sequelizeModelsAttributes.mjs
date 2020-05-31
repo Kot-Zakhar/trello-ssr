@@ -27,6 +27,37 @@ export const BoardAttributes = {
     },
     description: {
         type: Sequelize.DataTypes.TEXT
-    }
+    },
 }
 
+export const FileAttributes = {
+    id: {
+        type: Sequelize.DataTypes.STRING,
+        primaryKey: true,
+        allowNull: false
+    },
+    originalname: {
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false
+    },
+    mimetype: {
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false
+    },
+    destination: {
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false
+    },
+    filename: {
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false
+    },
+    path: {
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false
+    },
+    size: {
+        type: Sequelize.DataTypes.INTEGER,
+        allowNull: false
+    }
+}

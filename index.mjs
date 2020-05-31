@@ -1,14 +1,20 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+dotenv.config();
+import morgan from 'morgan';
+
 import sequelizeConstructor from './src/sequelize';
 import appRouter from './src/router'
 
-dotenv.config();
 let sequelize = null;
 
 let app = express();
 
-app.use('/public', express.static('public'));
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use('/' + process.env.MULTER_SAVE_DESTINATION, express.static(process.env.MULTER_SAVE_DESTINATION));
 app.set('view engine', 'ejs');
 
 (async() => {
