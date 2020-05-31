@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.mjs",
-    "type": "module",
     "dependencies": {
         "body-parser": "^1.19.0",
         "dotenv": "^8.2.0",
@@ -19,8 +18,8 @@
         "lorem-ipsum": "^2.0.3"
     },
     "scripts": {
-        "start": "nodemon --experimental-modules index",
-        "heroku-postbuild": "node --experimental-modules index.mjs"
+        "start": "nodemon index",
+        "heroku-postbuild": "node index"
     },
     "author": "",
     "license": "ISC"

@@ -1,7 +1,7 @@
-import express from 'express';
-import { imageMulter } from '../multer';
+const express = require('express');
+const { imageMulter } = require('../multer');
 
-export default function (sequelize) {
+module.exports = function (sequelize) {
     const Board = sequelize.models.board;
     const File = sequelize.models.file;
 

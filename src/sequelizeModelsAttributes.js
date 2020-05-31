@@ -1,6 +1,6 @@
-import Sequelize from 'sequelize';
+const Sequelize = require('sequelize');
 
-export const CardAttributes = {
+module.exports.CardAttributes = {
     id : {
         type: Sequelize.DataTypes.UUID,
         defaultValue: Sequelize.DataTypes.UUIDV4,
@@ -13,9 +13,9 @@ export const CardAttributes = {
     description: {
         type: Sequelize.DataTypes.TEXT
     }
-}
+};
 
-export const BoardAttributes = {
+module.exports.BoardAttributes = {
     id : {
         type: Sequelize.DataTypes.UUID,
         defaultValue: Sequelize.DataTypes.UUIDV4,
@@ -28,9 +28,9 @@ export const BoardAttributes = {
     description: {
         type: Sequelize.DataTypes.TEXT
     },
-}
+};
 
-export const FileAttributes = {
+module.exports.FileAttributes = {
     id: {
         type: Sequelize.DataTypes.STRING,
         primaryKey: true,
@@ -60,4 +60,4 @@ export const FileAttributes = {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false
     }
-}
+};
