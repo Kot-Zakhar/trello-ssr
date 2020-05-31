@@ -19,7 +19,8 @@
         "lorem-ipsum": "^2.0.3"
     },
     "scripts": {
-        "start": "nodemon --experimental-modules index"
+        "start": "nodemon --experimental-modules index",
+        "heroku-postbuild": "node --experimental-modules index"
     },
     "author": "",
     "license": "ISC"
