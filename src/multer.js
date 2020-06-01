@@ -1,4 +1,4 @@
-import multer from 'multer';
+const multer = require('multer');
 
 const allowedImageExts = [
     "png",
@@ -19,6 +19,6 @@ const imageFilter = (req, file, cb) => {
 
 const dest = process.env.MULTER_SAVE_DESTINATION || "data/public/uploads";
 
-export const fileMulter = multer({ dest });
+module.exports.fileMulter = multer({ dest });
 
-export const imageMulter = multer({ dest, fileFilter: imageFilter });
+module.exports.imageMulter = multer({ dest, fileFilter: imageFilter });

@@ -1,10 +1,10 @@
-import express from 'express';
+const express = require('express');
 
-import cardRouter from './routers/cardRouter'
-import boardRouter from './routers/boardRouter'
-import testDataGenerator from './testData'
+const cardRouter = require('./routers/cardRouter')
+const boardRouter = require('./routers/boardRouter')
+const testDataGenerator = require('./testData')
 
-export default function (sequelize) {
+module.exports = function (sequelize) {
     const Board = sequelize.models.board;
     const Card = sequelize.models.card;
     const File = sequelize.models.file;

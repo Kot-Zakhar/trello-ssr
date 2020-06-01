@@ -1,11 +1,11 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
+const express = require('express');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
 dotenv.config();
-import morgan from 'morgan';
+const morgan = require('morgan');
 
-import sequelizeConstructor from './src/sequelize';
-import appRouter from './src/router'
+const sequelizeConstructor = require('./src/sequelize');
+const appRouter = require('./src/router')
 
 let sequelize = null;
 

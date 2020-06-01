@@ -1,4 +1,4 @@
-import loremIpsum from "lorem-ipsum";
+const loremIpsum = require('lorem-ipsum');
 
 const lorem = new loremIpsum.LoremIpsum({
     sentencesPerParagraph: {
@@ -11,7 +11,7 @@ const lorem = new loremIpsum.LoremIpsum({
     }
 });
 
-export default async function(sequelize) {
+module.exports = async function(sequelize) {
     const maxCardAmount = 5;
     const minCardAmount = 0;
     const boardAmount = 5;

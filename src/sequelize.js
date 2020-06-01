@@ -1,7 +1,7 @@
-import Sequelize from 'sequelize';
-import { CardAttributes, BoardAttributes, FileAttributes } from './sequelizeModelsAttributes.mjs';
+const Sequelize = require('sequelize');
+const { CardAttributes, BoardAttributes, FileAttributes } = require('./sequelizeModelsAttributes.js');
 
-export default async function(connectionString) {
+module.exports = async function(connectionString) {
     const sequelize = new Sequelize.Sequelize(connectionString);
 
     const Card = sequelize.define('card', CardAttributes);
